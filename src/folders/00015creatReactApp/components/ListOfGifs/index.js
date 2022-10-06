@@ -1,6 +1,26 @@
+import React from 'react'
+import Gif from '../Gif'
+import './ListOfGifs.css'
+
+export default function ListOfGifs ({gifs}) {
+  return <div className='ListOfGifs'>
+    {
+      gifs.map(({id, title, url}) =>
+        <Gif
+          id={id}
+          key={id}
+          title={title}
+          url={url}
+        />
+      )
+    }
+  </div>
+}
+
+/* 
 import React, { useEffect, useState } from 'react'
-import getGifs from '../services/getGifs'
-import Gifs from './Gifs'
+import getGifs from '../../services/getGifs'
+import Gifs from '../Gif'
 
 const ListOfGifs = ({params}) => {
     const {keyword} = params
@@ -28,7 +48,7 @@ const ListOfGifs = ({params}) => {
   )
 }
 
-export default ListOfGifs
+export default ListOfGifs */
 
 
 
