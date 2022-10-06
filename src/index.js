@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
-import App from './apps/App00016zzCovid2019'
+import App from './apps/App00016zzzchatApp'
 import reportWebVitals from './reportWebVitals';
 
 const root = document.getElementById('root');
