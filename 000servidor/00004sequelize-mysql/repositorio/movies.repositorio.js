@@ -64,6 +64,8 @@ const removeMovies = async(id) => {
     return await Movies.destroy({ where: {id} })
 }
 
+//const asociatePeliMovie = async(idMovie, idPersonaje) => {}
+
 module.exports = {
     findAllMovies,
     findByIdMovie,
@@ -71,5 +73,6 @@ module.exports = {
     findTitle,
     saveMovies,
     updateMovies,
-    removeMovies
+    removeMovies,
+    
 }

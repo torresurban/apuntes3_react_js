@@ -12,9 +12,9 @@ const getAllPeliculas = async(req, res) => {
 
 const createPeliculas = async(req, res) => {
     try {
-        // let m = req.params
+        // let m = req.body
         // m = await movieService.save(m)
-        const dato = await movieService.save(req.params)
+        const dato = await movieService.save(req.body)
         res.status(201).json({
             message:'creado exitosamente',
             dato
@@ -64,10 +64,22 @@ const deletePelicula = async(req, res) => {
     }
 }
 
+const asociateCharacter = async(req, res) => {
+    try {
+        const character = req.character
+        const movie = req.movie
+        await movieService.asociate(movie, character)
+        res.json()
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
     getAllPeliculas,
     createPeliculas,
     updatePeliculas,
     getPeliculaById,
-    deletePelicula
+    deletePelicula,
+    asociateCharacter
 }
